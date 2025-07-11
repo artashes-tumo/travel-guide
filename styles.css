@@ -1,0 +1,283 @@
+:root {
+  --primary-color: #2563eb;
+  /* Blue-600 */
+  --secondary-color: #0ea5e9;
+  /* Sky-500 */
+  --accent-color: #f59e0b;
+  /* Amber-500 */
+  --text-color: #1f2937;
+  /* Gray-800 */
+  --bg-main: #f0f9ff;
+  --bg-response: #ffffff;
+  --bg-input: #f9fafb;
+
+  /* Light theme gradient colors: Blue to Sky Blue */
+  --gradient-start: #1e3a8a;
+  /* Blue-900 */
+  --gradient-end: #0ea5e9;
+  /* Sky-500 */
+  --gradient-mid: #3b82f6;
+  /* Blue-500 */
+}
+
+body.dark-mode {
+  --primary-color: #7dd3fc;
+  --secondary-color: #38bdf8;
+  --accent-color: #facc15;
+  --text-color: #e0f2fe;
+  --bg-main: #0f172a;
+  --bg-response: #1e293b;
+  --bg-input: #1e293b;
+
+  /* DARK theme gradient colors: Dark blues */
+  --gradient-start: #0a1e3f;
+  /* Very dark blue */
+  --gradient-mid: #112f58;
+  /* Dark blue */
+  --gradient-end: #183b75;
+  /* Medium dark blue */
+}
+
+/* Background Gradient */
+body {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.8s ease-in-out, color 0.5s ease-in-out;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container keeps padding & width */
+.container {
+  flex: 1;
+}
+
+/* 🤖 Avatar */
+#avatar {
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  filter: drop-shadow(0 0 12px var(--primary-color));
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+#avatar:hover {
+  transform: scale(1.06);
+  opacity: 0.92;
+}
+
+/* 💬 Response Box */
+#response {
+  background: var(--bg-response);
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease-in-out;
+  white-space: pre-wrap;
+  min-height: 80px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✍️ Inputs & Buttons */
+button,
+select,
+input,
+textarea {
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--bg-input);
+  color: var(--text-color);
+  transition: all 0.35s ease-in-out;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+button:hover,
+select:hover,
+input:hover,
+textarea:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.6);
+}
+
+button:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* 🔊 Small Buttons */
+#toggleVoice,
+#clearHistoryBtn,
+#stop {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  transition: background-color 0.35s ease-in-out;
+}
+
+#stop {
+  margin-left: 0.5rem;
+}
+
+/* 😍 Reactions */
+.reaction-btn {
+  font-size: 1.4rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  transition: transform 0.35s ease-in-out, background 0.35s ease-in-out, color 0.35s ease-in-out;
+  cursor: pointer;
+}
+
+.reaction-btn:hover {
+  transform: scale(1.25);
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* 📜 History */
+#historyList {
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--bg-input);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 1.3rem 1.5rem;
+  color: inherit;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 📝 Markdown styling in response */
+#response h1,
+#response h2,
+#response h3 {
+  margin-top: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+#response strong {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+#response em {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+#response ul {
+  margin-left: 2rem;
+  list-style-type: disc;
+}
+
+/* 💬 Typing Indicator (dots) with smooth easing */
+.typing-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  height: 20px;
+  margin-top: 0.5rem;
+}
+
+.typing-indicator span {
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.5s ease-in-out infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glass card effect for sections */
+.glass-card {
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  transition: transform 0.35s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+
+.glass-card:hover {
+  transform: scale(1.02);
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+  #avatar {
+    width: 120px;
+  }
+
+  button,
+  select,
+  input,
+  textarea {
+    padding: 0.75rem 1.3rem;
+    font-size: 1rem;
+  }
+
+  .reaction-btn {
+    font-size: 1.2rem;
+  }
+}
+
+/* ♿ Accessibility */
+:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
