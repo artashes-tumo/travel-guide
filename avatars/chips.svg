@@ -1,0 +1,16 @@
+<!-- Placeholder avatar for "Chips". Replace with avatars/chips.png (and update the option in index.php) if you want a real image. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Chips, a potato chip with a very wide smile">
+  <rect width="240" height="240" fill="#2E3A59"/>
+  <!-- the chip -->
+  <path d="M58 62c22-20 62-26 96-14 30 10 44 34 40 64-3 26 4 46-14 66-22 24-66 28-100 14-28-12-44-36-42-66 1-22-1-46 20-64Z" fill="#F2C14E"/>
+  <path d="M74 80c10-4 18 2 26-2M150 70c6 4 12 2 18 6M86 168c8 4 16 2 22 6" stroke="#D99A2B" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- glasses -->
+  <circle cx="98" cy="112" r="17" fill="#fff" stroke="#1E2638" stroke-width="5"/>
+  <circle cx="148" cy="112" r="17" fill="#fff" stroke="#1E2638" stroke-width="5"/>
+  <path d="M115 111h16" stroke="#1E2638" stroke-width="5"/>
+  <circle cx="98" cy="113" r="5" fill="#1E2638"/>
+  <circle cx="148" cy="113" r="5" fill="#1E2638"/>
+  <!-- the smile, a little too wide -->
+  <path d="M78 146c26 26 74 26 100 0" fill="#fff" stroke="#1E2638" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M92 154v9M106 159v10M120 161v10M134 159v10M148 155v9M162 150v8" stroke="#1E2638" stroke-width="3"/>
+</svg>
